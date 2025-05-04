@@ -35,7 +35,7 @@ def main():
         for other_collision in asteroid:
             for bullet in shot:
                 if other_collision.collision(bullet) == True:
-                    other_collision.kill()
+                    other_collision.split()
                     bullet.kill()
         pygame.Surface.fill(screen, (0,0,0))
         for draw in drawable:
