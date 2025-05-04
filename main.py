@@ -32,6 +32,11 @@ def main():
             if collision.collision(player) == True:
                 print("Game over!")
                 exit()
+        for other_collision in asteroid:
+            for bullet in shot:
+                if other_collision.collision(bullet) == True:
+                    other_collision.kill()
+                    bullet.kill()
         pygame.Surface.fill(screen, (0,0,0))
         for draw in drawable:
             draw.draw(screen)
